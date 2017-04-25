@@ -7,7 +7,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-uglify"
     grunt.loadNpmTasks "grunt-contrib-yuidoc"
     grunt.loadNpmTasks "grunt-ftp-deploy"
-    grunt.loadNpmTasks "grunt-karma"
+    #grunt.loadNpmTasks "grunt-karma"
     grunt.loadNpmTasks "grunt-processhtml"
 
     grunt.initConfig
@@ -35,12 +35,13 @@ module.exports = ( grunt ) ->
 
         #  Run unit tests.
         #
+        ###
         karma:
             dev:
                 configFile: "test/conf/karma-dev.js"
             ci:
                 configFile: "test/conf/karma-ci.js"
-
+        ###
 
         #  Remove old build.
         #
@@ -170,7 +171,7 @@ module.exports = ( grunt ) ->
         "default"
         [
             "clean:dist"
-            "karma:dev"
+            #"karma:dev"
             "common"
         ]
     )
@@ -179,7 +180,7 @@ module.exports = ( grunt ) ->
         "ci"
         [
             "clean:dist"
-            "karma:ci"
+            #"karma:ci"
             "common"
         ]
     )
